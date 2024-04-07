@@ -78,7 +78,7 @@
   -webkit-text-size-adjust: 100%;
 
   --color-text-normal: #000d;
-  --color-text-light: #0007;
+  --color-text-light: #0009;
   --color-background1: #eed;
   --color-background2: #bba;
   --color-accent1: #900;
@@ -131,7 +131,7 @@ h1 {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-text-normal: #fffd;
-    --color-text-light: #fff7;
+    --color-text-light: #fff9;
     --color-background1: #111;
     --color-background2: #333;
   }
@@ -162,13 +162,13 @@ h1 {
 }
 .dualtext-help > span::after {
   content: attr(data-character);
+  pointer-events: none;
   position: absolute;
   left: 0;
   right: 0;
   top: 70%;
   margin: auto;
   font-family: var(--font-standard);
-  font-style: italic;
   font-size: clamp(0.45rem, 0.25em, 1rem);
   font-weight: 400;
   color: var(--color-text-light);
@@ -200,6 +200,7 @@ main {
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  padding-block: 1em;
 }
 
 .readingbox .dualtext-help {
@@ -208,6 +209,22 @@ main {
 .readingbox .dualtext-help > span {
   opacity: 0;
   --color-text-light: var(--color-accent1);
+}
+.readingbox .dualtext-help > span::after {
+  top: auto;
+  bottom: 70%;
+  padding: 0 0.2em 0.5em;
+  margin: 0 -0.2em 0;
+  font-size: 1em;
+  background-image: linear-gradient(
+    to top,
+    transparent,
+    var(--color-background1) 50%
+  );
+  border: 1px solid var(--color-text-light);
+  border-width: 0;
+  border-radius: 0.5em 0.5em 0 0;
+  line-height: 1;
 }
 .readingbox .dualtext-help > span:hover {
   opacity: 1;
