@@ -74,10 +74,12 @@ const fontNames = Object.keys(fonts);
 
 const selectedFont = signal("AurebeshAF-Legends");
 effect(() => {
-  document.documentElement.style.setProperty(
-    "--font-aurebesh",
-    selectedFont.value
-  );
+  if (typeof window !== "undefined") {
+    document.documentElement.style.setProperty(
+      "--font-aurebesh",
+      selectedFont.value
+    );
+  }
 });
 const ligatures = computed(() => {
   return fonts[selectedFont.value].ligatures;

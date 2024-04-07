@@ -35,9 +35,10 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        run: npm run build ./dist
-      - name: Vite Github Pages Deployer
-        uses: skywarth/vite-github-pages-deployer@v1.3.0
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         id: deploy_to_pages
         with:
-          build_path: ./dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
