@@ -153,6 +153,7 @@ h1 {
 .dualtext-help > span {
   position: relative;
   min-width: 0;
+  transition: all 0.25s ease-in;
 }
 .dualtext-help > span::before {
   content: attr(data-character);
@@ -168,7 +169,7 @@ h1 {
   margin: auto;
   font-family: var(--font-standard);
   font-style: italic;
-  font-size: 0.5em;
+  font-size: clamp(0.45rem, 0.25em, 1rem);
   font-weight: 400;
   color: var(--color-text-light);
 }
@@ -183,6 +184,31 @@ h1 {
 main {
   display: flex;
   flex-direction: column;
-  max-width: 60rem;
+  width: 100%;
+  max-width: 40rem;
   margin: 0 auto;
+}
+
+.readingbox {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.readingbox-text {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.readingbox .dualtext-help {
+  pointer-events: all;
+}
+.readingbox .dualtext-help > span {
+  opacity: 0;
+  --color-text-light: var(--color-accent1);
+}
+.readingbox .dualtext-help > span:hover {
+  opacity: 1;
 }

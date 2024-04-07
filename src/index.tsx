@@ -1,7 +1,7 @@
 import { hydrate, prerender as ssr } from "preact-iso";
 
 import "./style.css";
-import { computed, effect, signal } from "@preact/signals";
+import { computed, effect, signal, useSignal } from "@preact/signals";
 
 const fonts: Record<string, { ligatures: string[]; lowercase: boolean }> = {
   "AB-Equinox": {
@@ -97,6 +97,7 @@ export function App() {
       <main>
         <div class="content">
           <FontPicker />
+          <ReadingBox />
         </div>
         <aside class="reference">
           <DualText>
@@ -123,6 +124,46 @@ export function App() {
   );
 }
 
+function ReadingBox() {
+  const isEditing = useSignal(false);
+  const contents =
+    useSignal(`It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.
+
+During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.
+
+Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy...`);
+  return (
+    <div class="readingbox">
+      <span>
+        <label htmlFor="edit-toggle">Edit</label>
+        <input
+          type="checkbox"
+          id="edit-toggle"
+          selected={isEditing}
+          onChange={(event) => {
+            isEditing.value = event.currentTarget.checked;
+          }}
+        />
+      </span>
+      {isEditing.value ? (
+        <textarea
+          class="readingbox-textarea"
+          id="reading-material"
+          value={contents}
+          onChange={(event) => {
+            contents.value = event.currentTarget.value;
+          }}
+          spellCheck={false}
+        />
+      ) : (
+        <div class="readingbox-text aurebesh">
+          <DualText>{contents.value}</DualText>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function FontPicker() {
   return (
     <select
@@ -142,14 +183,25 @@ function FontPicker() {
 }
 
 function DualText({ children }: { children: string }) {
-  const words = children.split(/\b/);
+  const words: string[] = [];
+  children.split(/\n/).forEach((line, index, lines) => {
+    line.split(/\b(?=\w)/).forEach((word) => {
+      words.push(word);
+    });
+    if (index < lines.length - 1) {
+      words.push("\n");
+    }
+  });
   return (
     <span>
       {words.map((word) => {
+        if (word === "\n") {
+          return <br />;
+        }
         const letters: string[] = [];
         for (let i = 0; i < word.length; i += 1) {
           const nextTwoCharacters = word.slice(i, i + 2);
-          if (ligatures.value.includes(nextTwoCharacters)) {
+          if (ligatures.value.includes(nextTwoCharacters.toLowerCase())) {
             letters.push(nextTwoCharacters);
             i += 1;
           } else {
