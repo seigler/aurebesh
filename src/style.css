@@ -1,66 +1,66 @@
 @font-face {
   font-family: "AB-Equinox";
-  src: url(fonts/AB-Equinox.otf) format("opentype");
+  src: url(/fonts/AB-Equinox.otf) format("opentype");
 }
 @font-face {
   font-family: "AurebeshAF-Canon";
-  src: url(fonts/AurebeshAF-Canon.otf) format("opentype");
+  src: url(/fonts/AurebeshAF-Canon.otf) format("opentype");
 }
 @font-face {
   font-family: "AurebeshAF-CanonTech";
-  src: url(fonts/AurebeshAF-CanonTech.otf) format("opentype");
+  src: url(/fonts/AurebeshAF-CanonTech.otf) format("opentype");
 }
 @font-face {
   font-family: "AurebeshAF-Legends";
-  src: url(fonts/AurebeshAF-Legends.otf) format("opentype");
+  src: url(/fonts/AurebeshAF-Legends.otf) format("opentype");
 }
 @font-face {
   font-family: "AurebeshAF-LegendsTech";
-  src: url(fonts/AurebeshAF-LegendsTech.otf) format("opentype");
+  src: url(/fonts/AurebeshAF-LegendsTech.otf) format("opentype");
 }
 @font-face {
   font-family: "Aurebesh_Rodian-Oblique";
-  src: url(fonts/Aurebesh_Rodian-Oblique.otf) format("opentype");
+  src: url(/fonts/Aurebesh_Rodian-Oblique.otf) format("opentype");
 }
 @font-face {
   font-family: "Aurebesh_Rodian-OblqOutline";
-  src: url(fonts/Aurebesh_Rodian-OblqOutline.otf) format("opentype");
+  src: url(/fonts/Aurebesh_Rodian-OblqOutline.otf) format("opentype");
 }
 @font-face {
   font-family: "Aurebesh_Rodian";
-  src: url(fonts/Aurebesh_Rodian.otf) format("opentype");
+  src: url(/fonts/Aurebesh_Rodian.otf) format("opentype");
 }
 @font-face {
   font-family: "Aurebesh_Rodian-Outline";
-  src: url(fonts/Aurebesh_Rodian-Outline.otf) format("opentype");
+  src: url(/fonts/Aurebesh_Rodian-Outline.otf) format("opentype");
 }
 @font-face {
   font-family: "AurebeshTypewriter-Light";
-  src: url(fonts/AurebeshTypewriter-Light.otf) format("opentype");
+  src: url(/fonts/AurebeshTypewriter-Light.otf) format("opentype");
 }
 @font-face {
   font-family: "AurebeshTypewriter-Regular";
-  src: url(fonts/AurebeshTypewriter-Regular.otf) format("opentype");
+  src: url(/fonts/AurebeshTypewriter-Regular.otf) format("opentype");
 }
 @font-face {
   font-family: "Droidobesh";
-  src: url(fonts/Droidobesh.otf) format("opentype");
+  src: url(/fonts/Droidobesh.otf) format("opentype");
 }
 @font-face {
   font-family: "LaptiNekAF";
-  src: url(fonts/LaptiNekAF.otf) format("opentype");
+  src: url(/fonts/LaptiNekAF.otf) format("opentype");
 }
 @font-face {
   font-family: "Maulobesh";
-  src: url(fonts/Maulobesh.otf) format("opentype");
+  src: url(/fonts/Maulobesh.otf) format("opentype");
 }
 @font-face {
   font-family: "Nirvanabesh";
-  src: url(fonts/Nirvanabesh.otf) format("opentype");
+  src: url(/fonts/Nirvanabesh.otf) format("opentype");
 }
 @font-face {
   font-family: "Skyhook";
-  src: url(fonts/Skyhook.otf) format("opentype");
+  src: url(/fonts/Skyhook.otf) format("opentype");
 }
 
 :root {
