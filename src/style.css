@@ -1,0 +1,188 @@
+@font-face {
+  font-family: "AB-Equinox";
+  src: url(fonts/AB-Equinox.otf) format("opentype");
+}
+@font-face {
+  font-family: "AurebeshAF-Canon";
+  src: url(fonts/AurebeshAF-Canon.otf) format("opentype");
+}
+@font-face {
+  font-family: "AurebeshAF-CanonTech";
+  src: url(fonts/AurebeshAF-CanonTech.otf) format("opentype");
+}
+@font-face {
+  font-family: "AurebeshAF-Legends";
+  src: url(fonts/AurebeshAF-Legends.otf) format("opentype");
+}
+@font-face {
+  font-family: "AurebeshAF-LegendsTech";
+  src: url(fonts/AurebeshAF-LegendsTech.otf) format("opentype");
+}
+@font-face {
+  font-family: "Aurebesh_Rodian-Oblique";
+  src: url(fonts/Aurebesh_Rodian-Oblique.otf) format("opentype");
+}
+@font-face {
+  font-family: "Aurebesh_Rodian-OblqOutline";
+  src: url(fonts/Aurebesh_Rodian-OblqOutline.otf) format("opentype");
+}
+@font-face {
+  font-family: "Aurebesh_Rodian";
+  src: url(fonts/Aurebesh_Rodian.otf) format("opentype");
+}
+@font-face {
+  font-family: "Aurebesh_Rodian-Outline";
+  src: url(fonts/Aurebesh_Rodian-Outline.otf) format("opentype");
+}
+@font-face {
+  font-family: "AurebeshTypewriter-Light";
+  src: url(fonts/AurebeshTypewriter-Light.otf) format("opentype");
+}
+@font-face {
+  font-family: "AurebeshTypewriter-Regular";
+  src: url(fonts/AurebeshTypewriter-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: "Droidobesh";
+  src: url(fonts/Droidobesh.otf) format("opentype");
+}
+@font-face {
+  font-family: "LaptiNekAF";
+  src: url(fonts/LaptiNekAF.otf) format("opentype");
+}
+@font-face {
+  font-family: "Maulobesh";
+  src: url(fonts/Maulobesh.otf) format("opentype");
+}
+@font-face {
+  font-family: "Nirvanabesh";
+  src: url(fonts/Nirvanabesh.otf) format("opentype");
+}
+@font-face {
+  font-family: "Skyhook";
+  src: url(fonts/Skyhook.otf) format("opentype");
+}
+
+:root {
+  font-family: var(--font-standard);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #222;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --color-text-normal: #000d;
+  --color-text-light: #0007;
+  --color-background1: #eed;
+  --color-background2: #bba;
+  --color-accent1: #900;
+  --color-accent2: #b50;
+  --font-aurebesh: Droidobesh;
+  --font-standard: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  font-size: clamp(100%, 1rem + 2vw, 24px);
+  box-sizing: border-box;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  color: var(--color-text-normal);
+  background-image: linear-gradient(
+    -30deg,
+    var(--color-background1),
+    var(--color-background2)
+  );
+}
+
+#app {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  max-width: 60rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.aurebesh {
+  font-family: var(--font-aurebesh);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-text-normal: #fffd;
+    --color-text-light: #fff7;
+    --color-background1: #111;
+    --color-background2: #333;
+  }
+}
+
+.dualtext-word {
+  position: relative;
+  display: inline-block;
+  white-space: pre;
+}
+.dualtext-help {
+  position: absolute;
+  inset: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  pointer-events: none;
+  display: flex;
+}
+.dualtext-help > span {
+  position: relative;
+  min-width: 0;
+}
+.dualtext-help > span::before {
+  content: attr(data-character);
+  font-family: var(--font-aurebesh);
+  color: transparent;
+}
+.dualtext-help > span::after {
+  content: attr(data-character);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 70%;
+  margin: auto;
+  font-family: var(--font-standard);
+  font-style: italic;
+  font-size: 0.5em;
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+.reference {
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+  margin: 0 auto;
+}

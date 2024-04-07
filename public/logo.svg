@@ -1,0 +1,22 @@
+<svg aria-hidden="true" width="256" height="256" preserveAspectRatio="xMidYMid" viewBox="0 0 252.9 253" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .letters {
+      fill: #000;
+    }
+    @media (prefers-color-scheme: dark) {
+      .letters {
+        fill: #fff;
+      }
+    }
+  </style>
+  <defs>
+    <linearGradient id="a">
+      <stop style="stop-color:#900;" offset="0"/>
+      <stop style="stop-color:#b50;" offset="1"/>
+    </linearGradient>
+    <linearGradient xlink:href="#a" id="b" x1="1.5" y1="128.5" x2="254.5" y2="128.5" gradientUnits="userSpaceOnUse" gradientTransform="translate(-1.5 -2)"/>
+  </defs>
+  <circle style="fill:url(#b);" cx="126.5" cy="126.5" r="126.5"/>
+  <path class="letters" d="M70 74.5H16.2v26.4h40.6Zm-53.8 29.7v26.4H70l-13.2-26.4ZM96 85.7v18.5h-3.4V87.4L70.2 98.6v32h48.2V74.5ZM70.2 74.5v20.7l41.5-20.7Zm51.6 0v26.4h15.5l-14.8 29.7h25.2l28-56.1zm110.4 0-22.4 44.9v11.2h22.4v-29.7h5.6V74.5Zm-25.8 0-5.6 14-5.6-14h-22.4l28 56 28-56z"/>
+  <path class="letters" d="m72 158.7-12.7-25.5h-38L8.6 158.7Zm-63.4 3.2 12.7 25.5h38L72 161.9Zm111.8-28.7-21.6 43.4v10.8h21.6v-28.7h5.5v-25.5zm-24.9 0-5.4 13.6-5.4-13.6H63l27.1 54.2 27-54.2zm30.6 28.7v25.5h23.8l-12.7-25.5zm30.3-28.7v13.6l-5.4-13.6h-25l27.1 54.2h25v-54.2zm24.9 25.5h50.9v-25.5h-51zm0 28.7h50.9v-25.5h-51z"/>
+</svg>
