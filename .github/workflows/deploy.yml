@@ -37,8 +37,7 @@ jobs:
       - name: Build
         run: npm run build
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: skywarth/vite-github-pages-deployer@v1.3.0
         id: deploy_to_pages
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+          build_path: ./dist
