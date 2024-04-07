@@ -121,7 +121,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(1rem, 3rem, 9vw);
 }
 
 .aurebesh {
@@ -169,16 +169,17 @@ h1 {
   top: 70%;
   margin: auto;
   font-family: var(--font-standard);
-  font-size: clamp(0.45rem, 0.25em, 1rem);
+  font-size: clamp(0.75rem, 0.25em, 1rem);
   font-weight: 400;
   color: var(--color-text-light);
 }
 
 .reference {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.5rem, 6vw);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 main {
