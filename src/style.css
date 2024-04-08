@@ -5,18 +5,22 @@
 @font-face {
   font-family: "AurebeshAF-Canon";
   src: url(/fonts/AurebeshAF-Canon.otf) format("opentype");
+  size-adjust: 80%;
 }
 @font-face {
   font-family: "AurebeshAF-CanonTech";
   src: url(/fonts/AurebeshAF-CanonTech.otf) format("opentype");
+  size-adjust: 80%;
 }
 @font-face {
   font-family: "AurebeshAF-Legends";
   src: url(/fonts/AurebeshAF-Legends.otf) format("opentype");
+  size-adjust: 80%;
 }
 @font-face {
   font-family: "AurebeshAF-LegendsTech";
   src: url(/fonts/AurebeshAF-LegendsTech.otf) format("opentype");
+  size-adjust: 80%;
 }
 @font-face {
   font-family: "Aurebesh_Rodian-Oblique";
@@ -86,7 +90,7 @@
   --font-aurebesh: Droidobesh;
   --font-standard: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  font-size: clamp(100%, 1.5rem + 3vw, 350%);
+  font-size: clamp(100%, 0.5rem + 1vw, 150%);
   box-sizing: border-box;
 }
 
@@ -108,6 +112,17 @@ body {
   );
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
 #app {
   flex-grow: 1;
   display: flex;
@@ -121,10 +136,11 @@ body {
 }
 
 h1 {
-  font-size: clamp(1rem, 3rem, 9vw);
+  font-size: clamp(1rem, 1.75rem, 9vw);
 }
 
 .aurebesh {
+  font-size: 1.5em;
   font-family: var(--font-aurebesh);
 }
 
@@ -153,7 +169,8 @@ h1 {
 .dualtext-help > span {
   position: relative;
   min-width: 0;
-  transition: opacity 0.25s ease-in;
+  transition: opacity 0.1s ease-in;
+  transition-delay: 0.15s;
 }
 .dualtext-help > span::before {
   content: attr(data-character);
@@ -171,18 +188,17 @@ h1 {
   padding: 0.1em 0.25em;
   min-width: 100%;
   font-family: var(--font-standard);
-  font-size: clamp(0.75rem, 0.25em, 1rem);
+  font-size: clamp(0.75rem, 0.4em, 1rem);
   line-height: 1;
   font-weight: 400;
   color: var(--color-text-light);
 }
 
 .reference {
-  font-size: clamp(1rem, 1.5rem, 6vw);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding-bottom: 1rem;
+  gap: 0.5em;
+  padding-bottom: 1em;
 }
 
 main {
@@ -203,7 +219,6 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  overflow: scroll;
   padding: 1em;
 }
 
@@ -232,5 +247,6 @@ main {
 }
 .readingbox .dualtext-help > span:hover {
   opacity: 1;
-  outline: 1px solid var(--color-accent2);
+  box-shadow: 0 0 1em 0.2em var(--color-accent2);
+  border-radius: 0.25em;
 }

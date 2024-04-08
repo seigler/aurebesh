@@ -36,7 +36,7 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
           }}
         />
       </span>
-      {isEditing.value ? (
+      {isEditing.value && (
         <textarea
           class="readingbox-textarea"
           id="reading-material"
@@ -48,11 +48,10 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
           }}
           spellCheck={false}
         />
-      ) : (
-        <div class="readingbox-text aurebesh">
-          <DualText>{contents.value}</DualText>
-        </div>
       )}
+      <div class="readingbox-text aurebesh">
+        <DualText text={contents.value} />
+      </div>
     </div>
   );
 }

@@ -72,7 +72,7 @@ export const fonts: Record<
 
 export const fontNames = Object.keys(fonts);
 
-export const selectedFont = signal("AurebeshAF-Legends");
+export const selectedFont = signal("AurebeshAF-Canon");
 effect(() => {
   if (typeof window !== "undefined") {
     document.documentElement.style.setProperty(

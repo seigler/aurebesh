@@ -1,8 +1,8 @@
 import { ligatures } from "./store";
 
-export default function DualText({ children }: { children: string }) {
+export default function DualText({ text }: { text: string }) {
   const words: string[] = [];
-  children.split(/\n/).forEach((line, index, lines) => {
+  text.split(/\n/).forEach((line, index, lines) => {
     line.split(/\b(?=\w)/).forEach((word) => {
       words.push(word);
     });
@@ -10,6 +10,8 @@ export default function DualText({ children }: { children: string }) {
       words.push("\n");
     }
   });
+  const currentLigatures = ligatures.value;
+
   return (
     <span>
       {words.map((word) => {
@@ -19,7 +21,7 @@ export default function DualText({ children }: { children: string }) {
         const letters: string[] = [];
         for (let i = 0; i < word.length; i += 1) {
           const nextTwoCharacters = word.slice(i, i + 2);
-          if (ligatures.value.includes(nextTwoCharacters.toLowerCase())) {
+          if (currentLigatures.includes(nextTwoCharacters.toLowerCase())) {
             letters.push(nextTwoCharacters);
             i += 1;
           } else {
@@ -27,8 +29,8 @@ export default function DualText({ children }: { children: string }) {
           }
         }
         return (
-          <span class="dualtext-word">
-            <span class="aurebesh">{word}</span>
+          <span class="dualtext-word aurebesh">
+            {word}
             <div className="dualtext-help">
               {letters.map((character) => {
                 return <span data-character={character} />;
