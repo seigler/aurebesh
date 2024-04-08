@@ -86,7 +86,7 @@
   --font-aurebesh: Droidobesh;
   --font-standard: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  font-size: clamp(100%, 1rem + 2vw, 24px);
+  font-size: clamp(100%, 1.5rem + 3vw, 350%);
   box-sizing: border-box;
 }
 
@@ -172,6 +172,7 @@ h1 {
   min-width: 100%;
   font-family: var(--font-standard);
   font-size: clamp(0.75rem, 0.25em, 1rem);
+  line-height: 1;
   font-weight: 400;
   color: var(--color-text-light);
 }

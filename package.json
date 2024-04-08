@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@preact/signals": "^1.2.3",
+    "localforage": "^1.10.0",
     "preact": "^10.13.1",
     "preact-iso": "^2.6.2",
     "preact-render-to-string": "^6.4.1",
