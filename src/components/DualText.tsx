@@ -1,6 +1,12 @@
 import { ligatures } from "./store";
 
-export default function DualText({ text }: { text: string }) {
+export default function DualText({
+  text,
+  hover = false,
+}: {
+  text: string;
+  hover?: boolean;
+}) {
   const words: string[] = [];
   text.split(/\n/).forEach((line, index, lines) => {
     line.split(/\b(?=\w)/).forEach((word) => {
@@ -31,7 +37,7 @@ export default function DualText({ text }: { text: string }) {
         return (
           <span class="dualtext-word aurebesh">
             {word}
-            <div className="dualtext-help">
+            <div class="dualtext-help" data-hover={hover}>
               {letters.map((character) => {
                 return <span data-character={character} />;
               })}

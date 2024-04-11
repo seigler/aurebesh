@@ -24,25 +24,9 @@ export const fonts: Record<
     ligatures: ["ch", "sh", "th", "ae", "eo", "kh", "ng", "oo"],
     lowercase: false,
   },
-  "Aurebesh_Rodian-Oblique": {
-    ligatures: [],
-    lowercase: false,
-  },
-  "Aurebesh_Rodian-OblqOutline": {
-    ligatures: [],
-    lowercase: false,
-  },
   Aurebesh_Rodian: {
     ligatures: [],
     lowercase: false,
-  },
-  "Aurebesh_Rodian-Outline": {
-    ligatures: [],
-    lowercase: false,
-  },
-  "AurebeshTypewriter-Light": {
-    ligatures: [],
-    lowercase: true,
   },
   "AurebeshTypewriter-Regular": {
     ligatures: [],

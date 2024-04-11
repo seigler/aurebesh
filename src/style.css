@@ -23,24 +23,8 @@
   size-adjust: 80%;
 }
 @font-face {
-  font-family: "Aurebesh_Rodian-Oblique";
-  src: url(/fonts/Aurebesh_Rodian-Oblique.otf) format("opentype");
-}
-@font-face {
-  font-family: "Aurebesh_Rodian-OblqOutline";
-  src: url(/fonts/Aurebesh_Rodian-OblqOutline.otf) format("opentype");
-}
-@font-face {
   font-family: "Aurebesh_Rodian";
   src: url(/fonts/Aurebesh_Rodian.otf) format("opentype");
-}
-@font-face {
-  font-family: "Aurebesh_Rodian-Outline";
-  src: url(/fonts/Aurebesh_Rodian-Outline.otf) format("opentype");
-}
-@font-face {
-  font-family: "AurebeshTypewriter-Light";
-  src: url(/fonts/AurebeshTypewriter-Light.otf) format("opentype");
 }
 @font-face {
   font-family: "AurebeshTypewriter-Regular";
@@ -90,7 +74,7 @@
   --font-aurebesh: Droidobesh;
   --font-standard: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  font-size: clamp(100%, 0.5rem + 1vw, 150%);
+  font-size: clamp(100%, 0.25rem + 1.5vw, 150%);
   box-sizing: border-box;
 }
 
@@ -123,6 +107,12 @@ textarea {
   margin: 0;
 }
 
+input[type="radio"],
+input[type="checkbox"] {
+  height: 0.75em;
+  width: 0.75em;
+}
+
 #app {
   flex-grow: 1;
   display: flex;
@@ -136,11 +126,11 @@ textarea {
 }
 
 h1 {
-  font-size: clamp(1rem, 1.75rem, 9vw);
+  font-size: clamp(1rem, 9vw, 1.75rem);
 }
 
 .aurebesh {
-  font-size: 1.5em;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
   font-family: var(--font-aurebesh);
 }
 
@@ -169,8 +159,9 @@ h1 {
 .dualtext-help > span {
   position: relative;
   min-width: 0;
-  transition: opacity 0.1s ease-in;
-  transition-delay: 0.15s;
+}
+.dualtext-help > [data-character=" "] {
+  pointer-events: none;
 }
 .dualtext-help > span::before {
   content: attr(data-character);
@@ -181,7 +172,7 @@ h1 {
   content: attr(data-character);
   pointer-events: none;
   position: absolute;
-  top: 70%;
+  top: 80%;
   left: 50%;
   transform: translateX(-50%);
   margin: auto;
@@ -192,6 +183,7 @@ h1 {
   line-height: 1;
   font-weight: 400;
   color: var(--color-text-light);
+  transition: all 0.2s ease-in;
 }
 
 .reference {
@@ -202,10 +194,11 @@ h1 {
 }
 
 main {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 40rem;
+  max-width: 60rem;
   margin: 0 auto;
 }
 
@@ -213,6 +206,8 @@ main {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
 }
 
 .readingbox-text {
@@ -222,14 +217,14 @@ main {
   padding: 1em;
 }
 
-.readingbox .dualtext-help {
+.dualtext-help[data-hover="true"] {
   pointer-events: all;
 }
-.readingbox .dualtext-help > span {
+.dualtext-help[data-hover="true"] > span {
   opacity: 0;
   --color-text-light: var(--color-accent1);
 }
-.readingbox .dualtext-help > span::after {
+.dualtext-help[data-hover="true"] > span::after {
   top: auto;
   bottom: 70%;
   padding-bottom: 0.5em;
@@ -245,8 +240,16 @@ main {
   line-height: 1;
   text-align: center;
 }
-.readingbox .dualtext-help > span:hover {
+.dualtext-help[data-hover="true"] > span:hover {
   opacity: 1;
   box-shadow: 0 0 1em 0.2em var(--color-accent2);
   border-radius: 0.25em;
+}
+.dualtext-help[data-hover="true"] > span::after {
+  transform: translateX(-50%) translateY(10%);
+  opacity: 0;
+}
+.dualtext-help[data-hover="true"] > span:hover::after {
+  transform: translateX(-50%) translateY(0%);
+  opacity: 1;
 }

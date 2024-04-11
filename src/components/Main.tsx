@@ -31,8 +31,10 @@ export default function Main() {
           <FontPicker />
           <ReadingBox />
         </div>
-        <Reference />
       </main>
+      <footer>
+        <Reference />
+      </footer>
     </>
   );
 }

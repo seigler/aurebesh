@@ -26,15 +26,17 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
   return (
     <div class="readingbox">
       <span>
-        <label htmlFor="edit-toggle">Edit</label>
-        <input
-          type="checkbox"
-          id="edit-toggle"
-          selected={isEditing}
-          onChange={(event) => {
-            isEditing.value = event.currentTarget.checked;
-          }}
-        />
+        <label>
+          Edit{" "}
+          <input
+            type="checkbox"
+            id="edit-toggle"
+            selected={isEditing}
+            onChange={(event) => {
+              isEditing.value = event.currentTarget.checked;
+            }}
+          />
+        </label>
       </span>
       {isEditing.value && (
         <textarea
@@ -50,7 +52,7 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
         />
       )}
       <div class="readingbox-text aurebesh">
-        <DualText text={contents.value} />
+        <DualText text={contents.value} hover />
       </div>
     </div>
   );
