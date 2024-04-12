@@ -8,19 +8,11 @@ export const fonts: Record<
     ligatures: ["ch", "sh", "th", "ae", "eo", "kh", "ng", "oo"],
     lowercase: false,
   },
-  "AurebeshAF-Canon": {
+  "FT Aurebesh": {
     ligatures: [],
     lowercase: false,
   },
-  "AurebeshAF-CanonTech": {
-    ligatures: [],
-    lowercase: false,
-  },
-  "AurebeshAF-Legends": {
-    ligatures: ["ch", "sh", "th", "ae", "eo", "kh", "ng", "oo"],
-    lowercase: false,
-  },
-  "AurebeshAF-LegendsTech": {
+  "FT Aurebesh ligatures": {
     ligatures: ["ch", "sh", "th", "ae", "eo", "kh", "ng", "oo"],
     lowercase: false,
   },
@@ -56,7 +48,7 @@ export const fonts: Record<
 
 export const fontNames = Object.keys(fonts);
 
-export const selectedFont = signal("AurebeshAF-Canon");
+export const selectedFont = signal("FT Aurebesh");
 effect(() => {
   if (typeof window !== "undefined") {
     document.documentElement.style.setProperty(

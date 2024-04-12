@@ -3,24 +3,26 @@
   src: url(/fonts/AB-Equinox.otf) format("opentype");
 }
 @font-face {
-  font-family: "AurebeshAF-Canon";
-  src: url(/fonts/AurebeshAF-Canon.otf) format("opentype");
-  size-adjust: 80%;
+  font-family: "FT Aurebesh ligatures";
+  src: url(/fonts/FTAurebesh-Medium.otf) format("opentype");
+  font-feature-settings: "dlig" on;
+  font-weight: 500;
 }
 @font-face {
-  font-family: "AurebeshAF-CanonTech";
-  src: url(/fonts/AurebeshAF-CanonTech.otf) format("opentype");
-  size-adjust: 80%;
+  font-family: "FT Aurebesh ligatures";
+  src: url(/fonts/FTAurebesh-Bold.otf) format("opentype");
+  font-feature-settings: "dlig" on;
+  font-weight: 700;
 }
 @font-face {
-  font-family: "AurebeshAF-Legends";
-  src: url(/fonts/AurebeshAF-Legends.otf) format("opentype");
-  size-adjust: 80%;
+  font-family: "FT Aurebesh";
+  src: url(/fonts/FTAurebesh-Medium.otf) format("opentype");
+  font-weight: 500;
 }
 @font-face {
-  font-family: "AurebeshAF-LegendsTech";
-  src: url(/fonts/AurebeshAF-LegendsTech.otf) format("opentype");
-  size-adjust: 80%;
+  font-family: "FT Aurebesh";
+  src: url(/fonts/FTAurebesh-Bold.otf) format("opentype");
+  font-weight: 700;
 }
 @font-face {
   font-family: "Aurebesh_Rodian";
@@ -130,7 +132,7 @@ h1 {
 }
 
 .aurebesh {
-  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-size: clamp(1.5em, 3vw, 1.5em);
   font-family: var(--font-aurebesh);
 }
 
