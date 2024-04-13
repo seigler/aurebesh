@@ -5,6 +5,7 @@ import ReadingBox from "./ReadingBox";
 import Reference from "./Reference";
 import FontPicker from "./FontPicker";
 import DualText from "./DualText";
+import Drawer from "./Drawer";
 
 export default function Main() {
   useEffect(() => {
@@ -28,12 +29,14 @@ export default function Main() {
       </header>
       <main>
         <div class="content">
-          <FontPicker />
           <ReadingBox />
         </div>
       </main>
       <footer>
-        <Reference />
+        <Drawer>
+          <FontPicker />
+          <Reference />
+        </Drawer>
       </footer>
     </>
   );

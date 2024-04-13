@@ -71,6 +71,7 @@
   --color-text-light: #0009;
   --color-background1: #eed;
   --color-background2: #bba;
+  --color-backdrop: #eed3;
   --color-accent1: #900;
   --color-accent2: #b50;
   --font-aurebesh: Droidobesh;
@@ -115,6 +116,38 @@ input[type="checkbox"] {
   width: 0.75em;
 }
 
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.buttonlike {
+  appearance: button;
+}
+
+dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 4;
+  background-color: var(--color-background2);
+  border: 1px solid var(--color-background1);
+  padding: 1rem;
+}
+dialog::backdrop {
+  position: fixed;
+  inset: 0;
+  width: "100%";
+  height: "100%";
+  z-index: 3;
+  background-color: var(--color-backdrop);
+  backdrop-filter: blur(10px);
+}
+
 #app {
   flex-grow: 1;
   display: flex;
@@ -142,7 +175,21 @@ h1 {
     --color-text-light: #fff9;
     --color-background1: #111;
     --color-background2: #333;
+    --color-backdrop: #1113;
   }
+}
+
+.edit-modal-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30rem;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+.edit-modal-contents textarea {
+  flex-shrink: 1;
+  height: 40rem;
 }
 
 .dualtext-word {
@@ -254,4 +301,14 @@ main {
 .dualtext-help[data-hover="true"] > span:hover::after {
   transform: translateX(-50%) translateY(0%);
   opacity: 1;
+}
+
+footer {
+  width: "100%";
+}
+.drawer {
+  width: "100%";
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }

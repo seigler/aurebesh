@@ -1,10 +1,10 @@
 import { useSignal } from "@preact/signals";
 import localforage from "localforage";
-import { useEffect } from "preact/hooks";
+import { useEffect, useRef } from "preact/hooks";
 import DualText from "./DualText";
 
 export default function ReadingBox() {
-  const isEditing = useSignal(false);
+  const editModalRef = useRef<HTMLDialogElement>(null);
   const contents =
     useSignal(`It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.
 
@@ -25,32 +25,40 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
   }, []);
   return (
     <div class="readingbox">
-      <span>
-        <label>
-          Edit{" "}
-          <input
-            type="checkbox"
-            id="edit-toggle"
-            selected={isEditing}
+      <dialog ref={editModalRef} title="Update text">
+        <div className="edit-modal-contents">
+          <h2>Update text</h2>
+          <textarea
+            autofocus
+            class="readingbox-textarea"
+            id="reading-material"
+            value={contents}
             onChange={(event) => {
-              isEditing.value = event.currentTarget.checked;
+              const newValue = event.currentTarget.value;
+              contents.value = newValue;
+              localforage.setItem("aurebesh-text", newValue);
             }}
+            spellCheck={false}
           />
-        </label>
-      </span>
-      {isEditing.value && (
-        <textarea
-          class="readingbox-textarea"
-          id="reading-material"
-          value={contents}
-          onChange={(event) => {
-            const newValue = event.currentTarget.value;
-            contents.value = newValue;
-            localforage.setItem("aurebesh-text", newValue);
+          <button
+            onClick={() => {
+              editModalRef.current?.close();
+            }}
+          >
+            Save
+          </button>
+        </div>
+      </dialog>
+
+      <div>
+        <button
+          onClick={() => {
+            editModalRef.current?.showModal();
           }}
-          spellCheck={false}
-        />
-      )}
+        >
+          Edit
+        </button>
+      </div>
       <div class="readingbox-text aurebesh">
         <DualText text={contents.value} hover />
       </div>
