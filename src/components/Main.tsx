@@ -34,8 +34,8 @@ export default function Main() {
       </main>
       <footer>
         <Drawer>
-          <FontPicker />
           <Reference />
+          <FontPicker />
         </Drawer>
       </footer>
     </>

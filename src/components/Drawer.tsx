@@ -11,10 +11,11 @@ export default function Drawer({ children }: DrawerProps) {
         onClick={() => {
           isOpen.value = !isOpen.value;
         }}
+        class="drawer-handle"
       >
-        {isOpen.value ? "Hide 🞃" : "Expand 🞁"}
+        {isOpen.value ? "Reference 🞃" : "Reference 🞁"}
       </button>
-      {isOpen.value && children}
+      {children}
     </div>
   );
 }

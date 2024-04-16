@@ -50,7 +50,7 @@ Pursued by the Empire's sinister agents, Princess Leia races home aboard her sta
         </div>
       </dialog>
 
-      <div>
+      <div class="readingbox-actions">
         <button
           onClick={() => {
             editModalRef.current?.showModal();
