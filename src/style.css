@@ -319,6 +319,7 @@ footer {
   left: 0;
   right: 0;
   transform: translateY(100%);
+  transition: transform ease 0.2s;
   display: flex;
   flex-direction: column;
   align-items: stretch;

@@ -13,7 +13,7 @@ export default function Drawer({ children }: DrawerProps) {
         }}
         class="drawer-handle"
       >
-        {isOpen.value ? "Reference 🞃" : "Reference 🞁"}
+        {isOpen.value ? "Close Reference" : "Open Reference"}
       </button>
       {children}
     </div>
